@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<%= description %>">
+    <meta name="keywords" content="dạy lái xe, bằng lái, Đà Nẵng, trung tâm lái xe">
+    <title><%= title %></title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+
+    <style>
+        .floating-contact {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+        .phone-btn {
+            background-color: var(--primary); /* Màu đỏ */
+            color: white;
+            font-size: 1.8rem;
+            animation: pulse-red 2s infinite;
+        }
+        .zalo-btn {
+            background-color: #ffffff;
+        }
+        .zalo-btn img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(211, 47, 47, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
+        }
+        @media (max-width: 768px) {
+            .floating-contact { bottom: 20px; right: 20px; }
+            .float-btn { width: 50px; height: 50px; }
+            .phone-btn { font-size: 1.4rem; }
+            .zalo-btn img { width: 30px; height: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-brand">
+                <img src="/images/logo-mascot.jpg" alt="Logo Trung Tâm" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
+                Trung Tâm Dạy Lái Xe Mô Tô Đà Nẵng
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">Trang chủ</a></li>
+                <li><a href="#courses" class="nav-link">Khóa học</a></li>
+                <li><a href="#features" class="nav-link">Ưu điểm</a></li>
+                <li><a href="#testimonials" class="nav-link">Học viên</a></li>
+                <li><a href="https://zalo.me/0789852555" class="btn-primary" style="padding: var(--spacing-sm) var(--spacing-lg);">Đăng ký</a></li>
+            </ul>
+
+            <button class="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero" style="background: linear-gradient(rgba(139, 0, 0, 0.8), rgba(183, 28, 28, 0.9)), url('/images/hero/banner-san-tap.jpg') center/cover no-repeat fixed;">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title" style="font-size: var(--fs-3xl); color: white;">VỮNG TAY LÁI - TỰ TIN KHỞI HÀNH </h1>
+                <p class="hero-subtitle" style="color: rgba(255, 255, 255, 0.95);"><%= description %></p>
+                <div class="hero-buttons">
+                    <a href="#courses" class="btn-primary">KHÁM PHÁ KHÓA HỌC</a>
+                    <a href="https://zalo.me/0789852555" class="btn-outline" style="border-color: var(--accent); color: white;">TƯ VẤN MIỄN PHÍ</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="card-header text-center">
+                        <i class="fa-solid fa-crown olympia-crown"></i>
+                        <h3 style="color: var(--primary);">Thành Tích Đào Tạo</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="stat">
+                            <h3>98%</h3>
+                            <p>Tỷ lệ đỗ</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Giảng viên</p>
+                        </div>
+                        <div class="stat">
+                            <h3>10k+</h3>
+                            <p>Học viên</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro-section" style="background-color: var(--bg-secondary); padding: 4rem 0;">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 3rem;">Đăng Ký Học Lái Xe Mô Tô – Đơn Giản & Nhanh Chóng</h2>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; max-width: 1100px; margin: 0 auto;">
+                
+                <div style="flex: 1; min-width: 300px; color: var(--text-primary); font-size: 1.1rem; line-height: 1.8; text-align: justify;">
+                    <p style="margin-bottom: 1rem;">Đăng ký học lái xe trực tuyến (ghi danh online, nộp hồ sơ từ xa) là dịch vụ hỗ trợ học viên tham gia các khóa học bằng lái xe một cách tiện lợi nhất. Mọi thủ tục, quá trình tư vấn, chọn lịch học, xếp lớp... đều có thể được thực hiện online thông qua Zalo mà không cần học viên phải tốn thời gian di chuyển đến tận văn phòng trung tâm.</p>
+                    
+                    <p style="margin-bottom: 1rem;">Trung tâm Đào tạo lái xe tại Đà Nẵng đã tiên phong triển khai dịch vụ ghi danh online tiện ích này. Để tham gia khóa học đào tạo sát hạch lái xe uy tín và nhanh nhất, học viên hoàn toàn có thể đăng ký trực tuyến chỉ với 03 bước cực kỳ đơn giản: để lại thông tin liên hệ, chọn hạng bằng mong muốn (A, A1, B1, B2) và xác nhận đăng ký.</p>
+                    
+                    <p style="margin-bottom: 2rem;">Chỉ như thế là đủ, không cần rườm rà, không cần đau đầu tự đi lại làm hàng tá giấy tờ phức tạp. Trung tâm sẽ hỗ trợ chuyên viên tư vấn 1-1, thu hồ sơ tận nơi và hỗ trợ hoàn thiện mọi thủ tục (khám sức khỏe, photo giấy tờ) một cách trọn gói để bạn bước vào khóa học ngay lập tức.</p>
+
+                    <div style="text-align: left; margin-bottom: 2rem;">
+                        <button id="toggleInfoBtn" style="background: none; border: none; font-size: 1.1rem; font-weight: 600; color: var(--primary); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; padding: 0;">
+                            <i class="fa-solid fa-caret-down"></i> Xem thêm thông tin chi tiết
+                        </button>
+                    </div>
+                </div>
+
+                <div style="flex: 1; min-width: 300px; display: flex; justify-content: center;">
+                    <img
+                        src="/images/banner.png"
+                        alt="Dạy Lái Xe Đà Nẵng"
+                        style="
+                            width:100%;
+                            max-width:420px;
+                            height:auto;
+                            border-radius:18px;
+                            box-shadow:0 20px 45px rgba(0,0,0,.18);
+                            transition:all .35s ease;
+                            object-fit:cover;
+                        "
+                        onmouseover="this.style.transform='translateY(-8px) scale(1.03)'"
+                        onmouseout="this.style.transform='translateY(0) scale(1)'">
+                </div>
+            </div>
+
+            <div id="hiddenDetails" style="display: none; animation: fadeInDown 0.4s ease; max-width: 950px; margin: 2rem auto 0;">
+                
+                <div class="red-info-box">
+                    <h4><i class="fa-solid fa-clipboard-list"></i> Thủ tục đăng ký:</h4>
+                    <p>Đủ 18 tuổi trở lên, đủ điều kiện sức khỏe theo quy định của Sở GTVT. Là công dân Việt Nam hoặc người nước ngoài cư trú hợp pháp tại Việt Nam. Chỉ cần CMND/CCCD/Hộ chiếu bản gốc (Trung tâm hỗ trợ photo). Không cần chuẩn bị ảnh thẻ (Trung tâm hỗ trợ chụp hình miễn phí tại chỗ).</p>
+                </div>
+
+                <div class="red-info-box">
+                    <h4><i class="fa-solid fa-sack-dollar"></i> Học phí & Lịch học linh hoạt:</h4>
+                    <ul>
+                        <li>Học phí trọn gói, cam kết <strong>không phát sinh</strong> bất kỳ chi phí nào trong suốt quá trình học.</li>
+                        <li>Lịch học thực hành hoàn toàn do học viên chủ động sắp xếp, linh hoạt theo thời gian rảnh (kể cả Thứ 7, Chủ Nhật) mà không thu thêm phí.</li>
+                    </ul>
+                    <p>Việc học lái xe giờ đây trở nên cực kỳ tiện lợi. Dịch vụ của chúng tôi dành cho những ai bận rộn, chỉ cần liên hệ, chuyên viên sẽ tư vấn và hỗ trợ thu hồ sơ tận nhà. Mọi quá trình từ lúc đăng ký đến lúc thi sát hạch đều được trung tâm đồng hành sát sao.</p>
+                </div>
+
+                <div class="red-info-box">
+                    <h4><i class="fa-solid fa-circle-check"></i> Ưu điểm vượt trội:</h4>
+                    <ul>
+                        <li>Hệ thống sân tập rộng rãi, đạt chuẩn sa hình thi của Sở GTVT.</li>
+                        <li>Thực hành 100% trên dàn xe đời mới, máy lạnh hoạt động tốt (Vios, Accent...).</li>
+                        <li>Giáo viên tận tâm, giàu kinh nghiệm, áp dụng phương pháp dạy "1 kèm 1" (1 thầy - 1 trò - 1 xe).</li>
+                    </ul>
+                </div>
+
+                <div class="red-info-box">
+                    <h4><i class="fa-solid fa-thumbtack"></i> Cam kết chất lượng:</h4>
+                    <ul>
+                        <li>Đảm bảo tỷ lệ thi đậu sát hạch cao hàng đầu tại Đà Nẵng.</li>
+                        <li>Hỗ trợ bảo lưu kết quả học tập nếu học viên có công việc bận đột xuất.</li>
+                        <li>Cấp bằng nhanh chóng theo đúng quy định ngay sau khi thi đạt.</li>
+                    </ul>
+                    <p style="margin-top: 10px;"><strong>🏆 Lựa Chọn Chúng Tôi – Đặt Uy Tín Và Chất Lượng Lên Hàng Đầu:</strong> Với thủ tục đơn giản, chúng tôi sẽ giúp bạn tự tin cầm lái và vững bước trên mọi nẻo đường với các bước đăng ký cực kỳ nhanh chóng!</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 0 0 4rem 0; background-color: var(--bg-secondary);">
+        <div class="container" style="text-align: center;">
+            <a href="#courses">
+                <img src="/images/hero/banner-quang-cao.jpg" alt="Chiêu sinh lái xe Đà Nẵng" 
+                     style="width: 100%; max-width: 1100px; border-radius: var(--radius-xl); box-shadow: var(--shadow-2xl); border: 3px solid var(--accent); transition: transform 0.3s ease;"
+                     onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+            </a>
+        </div>
+    </section>
+
+    <section id="courses" class="courses">
+        <div class="container">
+            <div class="section-header">
+                <h2>Các Khóa Học Nổi Bật</h2>
+                <p>Lựa chọn khóa học phù hợp với nhu cầu của bạn</p>
+            </div>
+            
+            <div class="courses-grid">
+                
+                <div class="course-card">
+                    <div class="course-image" style="padding: 0;">
+                        <img src="/images/courses/course-a.jpg" alt="Khóa học Hạng A" class="course-img">
+                    </div>
+                    <div class="course-content">
+                        <h3>Bằng Lái Mô Tô Hạng A</h3>
+                        <p class="course-description">Dành cho người đam mê tốc độ, lái xe phân khối lớn trên 175cc.</p>
+                        <ul class="course-features">
+                            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Xe tập phân khối lớn</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Tỷ lệ đỗ thực hành cao</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Lịch thi tổ chức hàng tháng</li>
+                        </ul>
+                        <div class="course-price">Từ 1.700.000đ</div>
+                        <a href="/khoa-hoc/a" class="btn-outline" style="width: 100%; text-align: center;">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image" style="padding: 0;">
+                        <img src="/images/courses/course-a1.jpg" alt="Khóa học xe máy A1" class="course-img">
+                    </div>
+                    <div class="course-content">
+                        <h3>Bằng Lái Xe Máy A1</h3>
+                        <p class="course-description">Tổ chức thi hàng tuần, thủ tục nhanh gọn, tỉ lệ đậu lý thuyết tuyệt đối.</p>
+                        <ul class="course-features">
+                            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Khám sức khỏe tại chỗ</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Tặng app luyện thi</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Có bằng sau 7 ngày</li>
+                        </ul>
+                        <div class="course-price">Từ 500.000đ</div>
+                        <a href="/khoa-hoc/a1" class="btn-outline" style="width: 100%; text-align: center;">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="featured-badge">Hot Nhất</div>
+                    <div class="course-image" style="padding: 0;">
+                        <img src="/images/courses/course-b1b2.jpg" alt="Khóa học B1 B2" class="course-img">
+                    </div>
+                    <div class="course-content">
+                        <h3>Bằng Lái Ô tô B1/B2</h3>
+                        <p class="course-description">Khóa học lái xe ô tô số tự động và số sàn, xe đời mới, sân tập đạt chuẩn.</p>
+                        <ul class="course-features">
+                            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Lịch học linh hoạt</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> 1 kèm 1 thực hành</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Cam kết đỗ cao</li>
+                        </ul>
+                        <div class="course-price">LIÊN HỆ</div>
+                        <a href="/khoa-hoc/b1b2" class="btn-outline" style="width: 100%; text-align: center;">Xem chi tiết</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tại Sao Chọn Chúng Tôi</h2>
+                <p>Những lợi thế vượt trội của trung tâm dạy lái xe</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-wallet fa-2x" style="color: var(--primary);"></i></div>
+                    <h3>Học Phí Trọn Gói</h3>
+                    <p>Cam kết không phát sinh bất kỳ chi phí nào từ lúc nộp hồ sơ đến khi nhận bằng.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-calendar-check fa-2x" style="color: var(--primary);"></i></div>
+                    <h3>Lịch Học Linh Hoạt</h3>
+                    <p>Tự do sắp xếp thời gian rảnh, hỗ trợ thực hành cả Thứ 7 & Chủ Nhật không thu thêm phí.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-car fa-2x" style="color: var(--primary);"></i></div>
+                    <h3>Xe Tập Đời Mới 100%</h3>
+                    <p>Thực hành trên các dòng xe hiện đại (Vios, Accent...), máy lạnh hoạt động êm ái, an toàn.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-ranking-star fa-2x" style="color: var(--primary);"></i></div>
+                    <h3>Tỷ Lệ Đậu Cao</h3>
+                    <p>Chương trình giảng dạy bám sát cấu trúc sa hình của Sở GTVT, tự tin thi đậu ngay.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-chalkboard-user fa-2x" style="color: var(--primary);"></i></div>
+                    <h3>Giáo Viên Tận Tâm</h3>
+                    <p>Áp dụng phương pháp kèm 1-1. Giáo viên nhiệt tình, giàu kinh nghiệm, tuyệt đối không la mắng.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-file-signature fa-2x" style="color: var(--primary);"></i></div>
+                    <h3>Thủ Tục Đơn Giản</h3>
+                    <p>Chỉ cần CMND/CCCD. Hỗ trợ thu hồ sơ, chụp hình và khám sức khỏe trọn gói cực kỳ nhanh chóng.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 4rem 0; background-color: var(--bg-primary); border-top: 1px solid var(--border);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Môi Trường Học Tập Thực Tế</h2>
+                <p>Cơ sở vật chất hiện đại, đáp ứng mọi tiêu chuẩn của Sở GTVT</p>
+            </div>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: center;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="/images/features/lop-hoc-ly-thuyet.jpg" alt="Lớp học lý thuyết" style="width: 100%; border-radius: var(--radius-xl); box-shadow: var(--shadow-2xl); border: 2px solid var(--border);">
+                </div>
+                
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="font-family: var(--ff-heading); color: var(--primary); font-size: 1.8rem; margin-bottom: 1.5rem;">Lớp Học Lý Thuyết Bài Bản</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 1.1rem; line-height: 1.8; color: var(--text-primary);">
+                        <li style="margin-bottom: 1.2rem; display: flex; gap: 15px; align-items: flex-start;">
+                            <i class="fa-solid fa-circle-check" style="color: var(--accent); font-size: 1.5rem; margin-top: 2px;"></i>
+                            <span><strong>Phòng học rộng rãi:</strong> Không gian thoáng mát, trang bị đầy đủ thiết bị âm thanh, máy chiếu, máy lạnh.</span>
+                        </li>
+                        <li style="margin-bottom: 1.2rem; display: flex; gap: 15px; align-items: flex-start;">
+                            <i class="fa-solid fa-circle-check" style="color: var(--accent); font-size: 1.5rem; margin-top: 2px;"></i>
+                            <span><strong>Trực quan, dễ hiểu:</strong> Hệ thống biển báo, sa hình mô phỏng được dán trực quan giúp dễ dàng ghi nhớ.</span>
+                        </li>
+                        <li style="margin-bottom: 1.2rem; display: flex; gap: 15px; align-items: flex-start;">
+                            <i class="fa-solid fa-circle-check" style="color: var(--accent); font-size: 1.5rem; margin-top: 2px;"></i>
+                            <span><strong>Mẹo thi đậu 100%:</strong> Giảng viên hướng dẫn trực tiếp các "mẹo" làm bài trắc nghiệm và câu điểm liệt.</span>
+                        </li>
+                    </ul>
+                    <a href="https://zalo.me/0789852555" class="btn-primary" style="margin-top: 1rem; padding: 0.8rem 2rem;">Đăng Ký Khóa Học Ngay</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cảm Nhận Của Học Viên</h2>
+                <p>Những phản hồi tích cực từ các học viên đã hoàn thành khóa học</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars" style="color: var(--accent);">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Giáo viên rất tận tâm và kiên nhẫn. Tôi đã học hết khóa A1 chỉ trong 1 tháng 
+                        và đỗ ngay lần đầu. Cảm ơn các thầy cô!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/images/testimonials/avatar-1.jpg" alt="Nguyễn Hoàng">
+                        </div>
+                        <div>
+                            <h4>Nguyễn Hoàng</h4>
+                            <p style="margin:0; font-size:0.8rem; color:var(--text-light);">Hạng A1</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars" style="color: var(--accent);">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Khóa học B2 cực kỳ chất lượng. Sân tập rộng rãi, xe Vios đời mới rất dễ lái.
+                         Đặc biệt thầy dạy thực hành siêu vui tính!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/images/testimonials/avatar-2.jpg" alt="Trần Linh">
+                        </div>
+                        <div>
+                            <h4>Trần Linh</h4>
+                            <p style="margin:0; font-size:0.8rem; color:var(--text-light);">Hạng B2</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars" style="color: var(--accent);">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Dịch vụ hỗ trợ rất tuyệt. Lịch học được sắp xếp linh hoạt theo thời gian rảnh 
+                        của tôi sau giờ làm. Rất đáng tiền!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/images/testimonials/avatar-3.jpg" alt="Phạm Toàn">
+                        </div>
+                        <div>
+                            <h4>Phạm Toàn</h4>
+                            <p style="margin:0; font-size:0.8rem; color:var(--text-light);">Hạng A</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2 style="color: white; margin-bottom: 1rem;">Liên Hệ Với Chúng Tôi</h2>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">Hãy điền thông tin để nhận tư vấn miễn phí từ đội ngũ của chúng tôi</p>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: white; margin: 0 0 5px 0;">Email</h4>
+                            <p style="color: rgba(255,255,255,0.8); margin:0;">thaytiendaylaixedanang@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: white; margin: 0 0 5px 0;">Điện Thoại</h4>
+                            <p style="color: rgba(255,255,255,0.8); margin:0;">078 985 2555</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: white; margin: 0 0 5px 0;">Địa Chỉ</h4>
+                            <p style="color: rgba(255,255,255,0.8); margin:0;">27 Đào Doãn Địch, Đà Nẵng, Việt Nam</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <input type="text" name="name" placeholder="Họ và tên" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: var(--radius-lg);">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <input type="tel" name="phone" placeholder="Số điện thoại" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: var(--radius-lg);">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <select name="course" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: var(--radius-lg);">
+                            <option value="">-- Chọn khóa học bạn quan tâm --</option>
+                            <option value="A">Hạng A (Phân khối lớn)</option>
+                            <option value="A1">Hạng A1 (Xe máy)</option>
+                            <option value="B1B2">Hạng B1/B2 (Ô tô con)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Gửi Yêu Cầu Tư Vấn</button>
+                    <p class="form-note" style="text-align: center; margin-top: 1rem; color: var(--text-light); font-size: 0.9rem;">Chúng tôi sẽ liên hệ lại bạn trong thời gian sớm nhất</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Trung Tâm Dạy Lái Xe Đà Nẵng</h4>
+                    <p>Trung tâm dạy bằng lái xe chuyên nghiệp, tập trung vào chất lượng 
+                       giáo dục và sự hài lòng của học viên.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Khóa Học</h4>
+                    <ul style="padding-left: 0;">
+                        <li><a href="/khoa-hoc/a">Hạng A (Mô tô)</a></li>
+                        <li><a href="/khoa-hoc/a1">Hạng A1 (Xe máy)</a></li>
+                        <li><a href="/khoa-hoc/b1b2">Hạng B1/B2 (Ô tô)</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Kết Nối</h4>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/thibanglaixedanang" class="social-link" style="color: white; text-decoration: none;"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="social-link" style="color: white; text-decoration: none;"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="social-link" style="color: white; text-decoration: none;"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Trung Tâm Dạy Lái Xe Đà Nẵng. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-contact">
+        <a href="tel:0789852555" class="float-btn phone-btn" title="Gọi Điện Thoại">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+        <a href="https://zalo.me/0789852555" class="float-btn zalo-btn" target="_blank" title="Chat Zalo">
+            <img src="/images/zalo-icon.png" alt="Zalo">
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Xử lý nút xem thêm
+            const btn = document.getElementById('toggleInfoBtn');
+            const details = document.getElementById('hiddenDetails');
+            
+            if(btn && details) {
+                btn.addEventListener('click', function() {
+                    if (details.style.display === 'none') {
+                        details.style.display = 'block';
+                        btn.innerHTML = '<i class="fa-solid fa-caret-up"></i> Thu gọn thông tin chi tiết';
+                    } else {
+                        details.style.display = 'none';
+                        btn.innerHTML = '<i class="fa-solid fa-caret-down"></i> Xem thêm thông tin chi tiết';
+                    }
+                });
+            }
+
+            // Xử lý Menu Mobile
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            if(hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/animations.js"></script>
+    <script src="/js/form-handler.js"></script>
+</body>
+</html>

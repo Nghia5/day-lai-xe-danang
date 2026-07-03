@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/course-detail.css">
+</head>
+<body>
+
+    <nav class="navbar scrolled" style="background: white !important; box-shadow: var(--shadow-md);">
+        <div class="navbar-container">
+            <a href="/" class="navbar-brand">
+                <img src="/images/logo-mascot.jpg" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
+                <span style="color: var(--primary); font-size: 1.2rem;">Trung Tâm Dạy Lái Xe Mô Tô Đà Nẵng</span>
+            </a>
+            <ul class="nav-menu" style="margin-left: auto;">
+                <li>
+                    <a href="/" class="btn-outline" style="padding: 8px 20px;">
+                        <i class="fa-solid fa-arrow-left" style="margin-right: 5px;"></i> Về Trang Chủ
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="detail-page">
+        <div class="container">
+            
+            <div class="course-header">
+                <h1><%= course.title %></h1>
+                <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto 1.5rem;"><%= course.desc %></p>
+                <div class="course-meta">
+                    <span><i class="fa-solid fa-clock"></i> Thời gian: <%= course.duration %></span>
+                    <span><i class="fa-solid fa-money-bill-wave"></i> Học phí từ: <strong style="color: var(--primary); font-size: 1.3rem;"><%= course.price %></strong></span>
+                </div>
+            </div>
+
+            <div class="detail-layout">
+                
+                <div class="detail-image">
+                    <img src="<%= course.image %>" alt="<%= course.title %>" onerror="this.src='/images/courses/course-placeholder.jpg'">
+                </div>
+
+                <div class="detail-content">
+                    
+                    <div class="content-section">
+                        <h3><i class="fa-solid fa-book-open"></i> NỘI DUNG ĐÀO TẠO</h3>
+                        <ul class="training-list">
+                            <% course.training.forEach(function(item) { %>
+                                <li><i class="fa-solid fa-check"></i> <span><%- item %></span></li>
+                            <% }); %>
+                        </ul>
+                    </div>
+
+                    <% if (course.pricing && course.pricing.length > 0) { %>
+                    <div class="content-section">
+                        <h3><i class="fa-solid fa-file-invoice-dollar"></i> CHI PHÍ CHI TIẾT</h3>
+                        <table class="pricing-table">
+                            <tbody>
+                                <% course.pricing.forEach(function(item) { %>
+                                    <% if (item.name.includes('[PHẦN')) { %>
+                                        <tr class="section-row">
+                                            <td><%= item.name %></td>
+                                            <td style="text-align: right;"><%= item.cost %></td>
+                                        </tr>
+                                    <% } else { %>
+                                        <tr class="normal-row">
+                                            <td><%= item.name %></td>
+                                            <td><%= item.cost %></td>
+                                        </tr>
+                                    <% } %>
+                                <% }); %>
+                                
+                                <tr class="total-row">
+                                    <td>CHI PHÍ TRỌN GÓI</td>
+                                    <td><%= course.totalPrice || course.price %></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <% if (course.specialOffer) { %>
+                        <div class="special-offer">
+                            <i class="fa-solid fa-gift"></i>
+                            <div class="special-offer-text">
+                                <strong>ĐÃ CÓ BẰNG LÁI XE Ô TÔ:</strong>
+                                <%= course.specialOffer.replace('ĐÃ CÓ BẰNG Ô TÔ:', '').trim() %>
+                            </div>
+                        </div>
+                        <% } %>
+                    </div>
+                    <% } %>
+
+                    <div class="content-section" style="margin-bottom: 0;">
+                        <h3><i class="fa-solid fa-folder-open"></i> HỒ SƠ CẦN CHUẨN BỊ</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">Học viên chỉ cần mang theo <strong style="color: var(--primary);">CMND/CCCD/Hộ chiếu gốc</strong> khi đến đăng ký. Trung tâm sẽ hỗ trợ chụp hình thẻ và khám sức khỏe trực tiếp tại văn phòng cực kỳ nhanh chóng.</p>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="https://zalo.me/0789852555" class="btn-primary" target="_blank"><i class="fa-solid fa-paper-plane" style="margin-right: 8px;"></i> TƯ VẤN QUA ZALO</a>
+                        <a href="tel:0789852555" class="btn-outline"><i class="fa-solid fa-phone-volume" style="margin-right: 8px;"></i> GỌI ĐIỆN ĐĂNG KÝ</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="floating-contact-container">
+        <a href="tel:0789852555" class="float-btn float-phone" title="Gọi Điện Thoại">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+        <a href="https://zalo.me/0789852555" target="_blank" class="float-btn float-zalo" title="Chat Zalo">
+            <img src="/images/zalo-icon.png" alt="Zalo">
+        </a>
+    </div>
+
+</body>
+</html>

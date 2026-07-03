@@ -1,0 +1,59 @@
+/* ============================================
+   TRANG CHI TIẾT KHÓA HỌC (COURSE DETAIL)
+   ============================================ */
+.detail-page { padding: 120px 0 4rem; min-height: 100vh;}
+
+.course-header { text-align: center; margin-bottom: 3rem; }
+.course-header h1 { color: var(--primary); font-size: 2.5rem; text-transform: uppercase; margin-bottom: 1rem; font-weight: 800;}
+.course-meta { display: flex; justify-content: center; gap: 20px; color: var(--text-secondary); font-weight: 600; font-size: 1.1rem; flex-wrap: wrap;}
+.course-meta span i { color: var(--accent); margin-right: 8px; }
+
+.detail-layout { display: flex; flex-wrap: wrap; gap: 3rem; align-items: flex-start; }
+.detail-image { flex: 1; min-width: 300px; text-align: center; position: sticky; top: 100px; }
+.detail-image img { width: 100%; max-width: 550px; border-radius: var(--radius-xl); box-shadow: var(--shadow-2xl); border: 3px solid var(--accent); }
+
+.detail-content { flex: 1.2; min-width: 300px; background: var(--bg-primary); padding: 2.5rem; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); border-top: 5px solid var(--primary);}
+
+.content-section { margin-bottom: 2.5rem; }
+.content-section h3 { color: var(--primary); font-size: 1.5rem; margin-bottom: 1.2rem; border-bottom: 2px dashed var(--border); padding-bottom: 10px; display: flex; align-items: center; gap: 10px;}
+.content-section h3 i { color: var(--accent); }
+
+.training-list { list-style: none; padding: 0; }
+.training-list li { margin-bottom: 1rem; line-height: 1.6; display: flex; align-items: flex-start; gap: 10px; color: var(--text-primary);}
+.training-list li i { color: var(--primary); margin-top: 5px; }
+
+.pricing-table { width: 100%; border-collapse: collapse; margin-top: 1rem; background: var(--bg-primary); border-radius: 8px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.05); border: 1px solid var(--border);}
+.pricing-table th, .pricing-table td { padding: 15px; border-bottom: 1px solid var(--border); }
+
+.section-row td { background-color: #FFF5F5; color: var(--primary); font-weight: 700; font-size: 1.05rem; }
+.normal-row td:first-child { color: var(--text-secondary); padding-left: 30px;}
+.normal-row td:last-child { font-weight: 600; color: var(--text-primary); text-align: right; }
+
+.total-row td { background-color: var(--primary); color: white !important; font-weight: 800; font-size: 1.3rem; text-transform: uppercase; }
+.total-row td:last-child { text-align: right; color: white !important; }
+
+/* Khối hộp quà ưu đãi: Nền Đỏ đậm, Chữ Trắng, Viền Vàng */
+.special-offer { background: linear-gradient(135deg, var(--primary), var(--secondary)); padding: 20px; border-radius: var(--radius-lg); color: white; display: flex; align-items: center; gap: 20px; box-shadow: 0 8px 20px rgba(211,47,47,0.3); margin-top: 2rem; border-left: 6px solid var(--accent);}
+.special-offer i { font-size: 2.5rem; color: var(--accent); }
+.special-offer-text { font-size: 1.05rem; line-height: 1.5; color: white; }
+.special-offer-text strong { color: var(white); font-size: 1.15rem; display: block; margin-bottom: 5px;}
+
+.cta-buttons { display: flex; gap: 15px; margin-top: 2rem; flex-wrap: wrap;}
+.cta-buttons a { flex: 1; text-align: center; min-width: 200px; padding: 15px !important; font-size: 1.1rem !important;}
+
+/* Nút liên hệ trôi nổi */
+.floating-contact-container { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 9999; }
+.float-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
+.float-btn:hover { transform: scale(1.1); }
+.float-phone { background: var(--primary); color: white; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(211,47,47,0.4); }
+.float-zalo { background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+.float-zalo img { width: 35px; height: 35px; border-radius: 50%; }
+
+@media (max-width: 768px) {
+    .detail-image { position: relative; top: 0; }
+    .detail-content { padding: 1.5rem; }
+    .pricing-table th, .pricing-table td { padding: 10px; font-size: 0.95rem; }
+    .normal-row td:first-child { padding-left: 15px; }
+    .special-offer { flex-direction: column; text-align: center; gap: 10px;}
+    .course-header h1 { font-size: 2rem; }
+}
