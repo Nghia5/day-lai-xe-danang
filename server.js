@@ -61,7 +61,7 @@ app.use('/js', express.static(path.join(__dirname, 'src/js')));
 app.get('/', (req, res) => {
     res.render('index.ejs', {
         title: 'Trung Tâm Dạy Bằng Lái Xe - Đà Nẵng',
-        description: 'Dạy lái xe chuyên nghiệp tại Đà Nẵng với tỷ lệ đỗ cao'
+        description: 'Đơn vị đào tạo lái xe chuyên nghiệp tại Đà Nẵng'
     });
 });
 

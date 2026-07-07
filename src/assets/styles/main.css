@@ -453,7 +453,13 @@ section { padding: var(--spacing-4xl) 0; }
         display: flex; flex-direction: column; text-align: center; padding-top: 0;
     }
     .hero-text { width: 100%; padding: 0; }
-    .hero-title { font-size: 2rem !important; line-height: 1.4; }
+    .hero-title {
+        font-size: 28px !important;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 18px;
+        padding: 0 10px;
+    }
     .hero-buttons {
         display: flex; flex-direction: column; width: 100%; gap: 15px; align-items: center;
     }
@@ -519,4 +525,354 @@ section { padding: var(--spacing-4xl) 0; }
     box-shadow:
         0 0 30px rgba(255,215,0,.6),
         0 15px 35px rgba(255,193,7,.45);
+}
+.register-btn-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.register-btn{
+    padding:14px 40px;
+    border-radius:999px;
+}
+/* Nút Đăng ký trong Course Card */
+.course-card .btn-course-register{
+    display:flex !important;
+    justify-content:center;
+    align-items:center;
+
+    width:220px;
+    height:52px;
+
+    margin:18px auto 0 !important;
+    padding:0 !important;
+
+    border-radius:999px;
+
+    font-size:16px;
+    font-weight:700;
+
+    line-height:52px;
+
+    text-decoration:none;
+    white-space:nowrap;
+
+    flex:none;
+}
+@media (max-width: 768px) {
+    .section-header h2{
+        font-size: 2.2rem;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        padding: 0 16px;
+        word-break: keep-all;
+    }
+}
+/* =========================
+   ADMISSION
+========================= */
+
+.admission{
+    padding:70px 0;
+    background:#fff;
+}
+
+.admission .container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 20px;
+}
+
+/* HEADER */
+
+.admission-header{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.admission-tag{
+    display:inline-block;
+    padding:8px 24px;
+    border:2px solid #d60027;
+    border-radius:40px;
+    color:#d60027;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:.5px;
+    margin-bottom:18px;
+}
+
+.admission-header h2{
+    font-size:56px;
+    font-weight:900;
+    text-transform:uppercase;
+    line-height:1.1;
+    margin-bottom:18px;
+    color:#222;
+}
+
+.admission-header p{
+    font-size:18px;
+    color:#666;
+}
+
+/* GRID */
+
+.admission-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+    margin-bottom:35px;
+}
+
+/* CARD */
+
+.admission-item{
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:18px;
+    padding:30px;
+    position:relative;
+    transition:.35s;
+    overflow:hidden;
+}
+
+.admission-item::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:6px;
+    height:100%;
+    background:#d60027;
+}
+
+.admission-item:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 35px rgba(0,0,0,.08);
+}
+
+.admission-item h3{
+    font-size:28px;
+    color:#d60027;
+    margin-bottom:18px;
+    font-weight:800;
+}
+
+.admission-item p{
+    font-size:18px;
+    line-height:1.8;
+    color:#444;
+}
+
+.admission-item span{
+    color:#777;
+}
+
+.admission-item ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.admission-item li{
+    position:relative;
+    padding-left:26px;
+    margin-bottom:14px;
+    font-size:17px;
+    color:#444;
+}
+
+.admission-item li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:#d60027;
+    font-weight:bold;
+}
+
+/* LICENSE */
+
+.license-box{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+
+.license-box div{
+    padding-bottom:18px;
+    border-bottom:1px dashed #ddd;
+}
+
+.license-box div:last-child{
+    border:none;
+    padding-bottom:0;
+}
+
+.license-box strong{
+    display:block;
+    font-size:24px;
+    color:#111;
+    margin-bottom:8px;
+}
+
+.license-box span{
+    color:#666;
+    line-height:1.7;
+}
+
+/* STUDY */
+
+.study-info{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+    margin-bottom:45px;
+}
+
+.study-card{
+    background:#fafafa;
+    border-left:6px solid #d60027;
+    border-radius:16px;
+    padding:30px;
+    transition:.3s;
+}
+
+.study-card:hover{
+    background:#fff;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+}
+
+.study-card h3{
+    font-size:30px;
+    color:#d60027;
+    margin-bottom:18px;
+}
+
+.study-card ul{
+    list-style:none;
+    padding:0;
+}
+
+.study-card li{
+    position:relative;
+    padding-left:28px;
+    margin-bottom:14px;
+    color:#444;
+    line-height:1.8;
+}
+
+.study-card li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:#d60027;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+.admission-footer{
+    background:linear-gradient(135deg,#f18ea0,#b50020);
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+    color:#fff;
+}
+
+.admission-footer p{
+    font-size:20px;
+    margin-bottom:25px;
+    line-height:1.8;
+    color:#fff;
+}
+
+.admission-footer .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:16px 38px;
+    background:#fff;
+    color:#d60027;
+    border-radius:999px;
+    font-size:18px;
+    font-weight:700;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.admission-footer .btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+.admission{
+    padding:50px 0;
+}
+
+.admission-header h2{
+    font-size:38px;
+}
+
+.admission-grid,
+.study-info{
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.admission-item,
+.study-card{
+    padding:24px;
+}
+
+.admission-item h3,
+.study-card h3{
+    font-size:24px;
+}
+
+.license-box strong{
+    font-size:21px;
+}
+
+.admission-footer{
+    padding:30px 20px;
+}
+
+.admission-footer p{
+    font-size:17px;
+}
+
+}
+
+@media(max-width:576px){
+
+.admission-header h2{
+    font-size:32px;
+}
+
+.admission-header p{
+    font-size:15px;
+}
+
+.admission-item p,
+.study-card li,
+.admission-item li,
+.license-box span{
+    font-size:15px;
+}
+
+.admission-item h3,
+.study-card h3{
+    font-size:21px;
+}
+
+.admission-footer .btn-primary{
+    width:100%;
+    padding:15px;
+}
+
 }
