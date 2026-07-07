@@ -875,5 +875,36 @@ section { padding: var(--spacing-4xl) 0; }
     width:100%;
     padding:15px;
 }
+}
+.support-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
 
+.support-list li{
+    position:relative;
+    padding-left:30px;
+    margin-bottom:16px;
+}
+
+.support-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:#d60027;
+    font-weight:bold;
+    font-size:22px;
+}
+
+/* Mục nổi bật */
+
+.support-list li.special{
+    font-weight:700;
+    color:#d60027;
+}
+
+.support-list li.special::before{
+    content:"⭐";
+    font-size:20px;
 }
