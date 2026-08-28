@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trung tâm dạy bằng lái xe chuyên nghiệp tại Đà Nẵng với tỷ lệ đỗ cao">
+    <meta name="keywords" content="dạy lái xe, bằng lái, Đà Nẵng, trung tâm lái xe">
+    <title>Trung Tâm Dạy Bằng Lái Xe - Đà Nẵng</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+    <!-- ============================================
+         NAVIGATION
+         ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M35 60 L50 35 L65 60 Z" fill="currentColor"/>
+                    <circle cx="40" cy="70" r="3" fill="currentColor"/>
+                    <circle cx="60" cy="70" r="3" fill="currentColor"/>
+                </svg>
+                <span>Driving</span>
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link">Trang Chủ</a></li>
+                <li><a href="#courses" class="nav-link">Khóa Học</a></li>
+                <li><a href="#features" class="nav-link">Ưu Điểm</a></li>
+                <li><a href="#testimonials" class="nav-link">Học Viên</a></li>
+                <li><a href="#contact" class="nav-link">Liên Hệ</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title" data-aos="fade-up">
+                    Bắt Đầu Hành Trình 
+                    <span class="accent">Lái Xe Chuyên Nghiệp</span>
+                </h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Học lái xe tại Đà Nẵng với các giáo viên giàu kinh nghiệm, 
+                    tỷ lệ đỗ cao 95% và hỗ trợ học tập 24/7
+                </p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+                    <button class="btn btn-primary" onclick="scrollToSection('contact')">Đăng Ký Ngay</button>
+                    <button class="btn btn-secondary">Tìm Hiểu Thêm</button>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="card-header">
+                        <span class="badge">A1 · C1 · D2</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="stat">
+                            <h3>95%</h3>
+                            <p>Tỷ lệ đỗ</p>
+                        </div>
+                        <div class="stat">
+                            <h3>2000+</h3>
+                            <p>Học viên</p>
+                        </div>
+                        <div class="stat">
+                            <h3>18 năm</h3>
+                            <p>Kinh nghiệm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-gradient"></div>
+    </section>
+
+    <!-- ============================================
+         COURSES SECTION
+         ============================================ -->
+    <section class="courses" id="courses">
+        <div class="container">
+            <div class="section-header">
+                <h2>Các Khóa Học</h2>
+                <p>Lựa chọn khóa học phù hợp với nhu cầu của bạn</p>
+            </div>
+
+            <div class="courses-grid">
+                <!-- Course A1 -->
+                <div class="course-card" data-aos="fade-up">
+                    <div class="course-image">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="30" y="70" width="140" height="80" fill="none" stroke="currentColor" stroke-width="3"/>
+                            <circle cx="60" cy="130" r="12" fill="currentColor"/>
+                            <circle cx="140" cy="130" r="12" fill="currentColor"/>
+                            <rect x="40" y="50" width="120" height="25" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M80 100 L120 100" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="course-content">
+                        <h3>Hạng A1</h3>
+                        <p class="course-description">Dành cho người lái xe máy</p>
+                        <ul class="course-features">
+                            <li>✓ Học lý thuyết: 20 giờ</li>
+                            <li>✓ Học thực hành: 25 giờ</li>
+                            <li>✓ Cấp bằng quốc tế</li>
+                        </ul>
+                        <div class="course-price">1.500.000 VNĐ</div>
+                        <button class="btn btn-outline" onclick="scrollToSection('contact')">Đăng Ký</button>
+                    </div>
+                </div>
+
+                <!-- Course C1 -->
+                <div class="course-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="featured-badge">Phổ Biến</div>
+                    <div class="course-image">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="60" width="160" height="90" fill="none" stroke="currentColor" stroke-width="3"/>
+                            <circle cx="50" cy="135" r="15" fill="currentColor"/>
+                            <circle cx="150" cy="135" r="15" fill="currentColor"/>
+                            <rect x="30" y="40" width="140" height="30" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M70 90 L130 90" stroke="currentColor" stroke-width="2"/>
+                            <path d="M70 110 L130 110" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="course-content">
+                        <h3>Hạng C1</h3>
+                        <p class="course-description">Dành cho ô tô con</p>
+                        <ul class="course-features">
+                            <li>✓ Học lý thuyết: 30 giờ</li>
+                            <li>✓ Học thực hành: 40 giờ</li>
+                            <li>✓ Hỗ trợ 24/7</li>
+                        </ul>
+                        <div class="course-price">3.500.000 VNĐ</div>
+                        <button class="btn btn-primary" onclick="scrollToSection('contact')">Đăng Ký Ngay</button>
+                    </div>
+                </div>
+
+                <!-- Course D2 -->
+                <div class="course-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="course-image">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="15" y="50" width="170" height="100" fill="none" stroke="currentColor" stroke-width="3"/>
+                            <circle cx="45" cy="140" r="18" fill="currentColor"/>
+                            <circle cx="155" cy="140" r="18" fill="currentColor"/>
+                            <rect x="25" y="30" width="150" height="35" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M60 80 L140 80" stroke="currentColor" stroke-width="2"/>
+                            <path d="M60 100 L140 100" stroke="currentColor" stroke-width="2"/>
+                            <path d="M60 120 L140 120" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="course-content">
+                        <h3>Hạng D2</h3>
+                        <p class="course-description">Dành cho xe tải nhẹ</p>
+                        <ul class="course-features">
+                            <li>✓ Học lý thuyết: 35 giờ</li>
+                            <li>✓ Học thực hành: 50 giờ</li>
+                            <li>✓ Chứng chỉ quốc tế</li>
+                        </ul>
+                        <div class="course-price">4.500.000 VNĐ</div>
+                        <button class="btn btn-outline" onclick="scrollToSection('contact')">Đăng Ký</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FEATURES SECTION
+         ============================================ -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tại Sao Chọn Chúng Tôi</h2>
+                <p>Những lợi thế vượt trội của trung tâm dạy lái xe</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M40 35 Q50 25 60 35 Q50 45 40 35" fill="currentColor"/>
+                            <path d="M35 55 L65 55 L65 70 L35 70 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Giáo Viên Giàu Kinh Nghiệm</h3>
+                    <p>Đội ngũ giáo viên lái xe được đạo tạo chuyên nghiệp, có nhiều năm kinh nghiệm thực tế trên đường</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="25" width="60" height="50" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="35" cy="70" r="5" fill="currentColor"/>
+                            <circle cx="65" cy="70" r="5" fill="currentColor"/>
+                            <path d="M30 40 L70 40" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Xe Hiện Đại</h3>
+                    <p>Flota xe mới, được bảo dưỡng định kỳ, trang bị đầy đủ các thiết bị an toàn hiện đại</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 75 L50 25 L75 75 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="50" cy="35" r="4" fill="currentColor"/>
+                            <path d="M50 35 L50 55" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Tỷ Lệ Đỗ Cao</h3>
+                    <p>Tỷ lệ học viên đỗ lần thứ nhất đạt 95%, cao hơn bình quân ngành</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M50 20 L50 50 L70 70" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Hỗ Trợ 24/7</h3>
+                    <p>Đội ngũ hỗ trợ luôn sẵn sàng trả lời mọi câu hỏi của bạn bất kỳ lúc nào</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="20" width="60" height="60" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M35 40 L50 55 L65 35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Chứng Chỉ Quốc Tế</h3>
+                    <p>Bằng lái được cấp theo tiêu chuẩn quốc tế, công nhận trên toàn thế giới</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M30 45 Q50 30 70 45 Q70 65 50 75 Q30 65 30 45" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="5" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>Vị Trí Thuận Tiện</h3>
+                    <p>Trung tâm nằm ở trung tâm thành phố, dễ tiếp cận bằng mọi phương tiện</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIALS SECTION
+         ============================================ -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cảm Nhận Của Học Viên</h2>
+                <p>Những phản hồi tích cực từ các học viên đã hoàn thành khóa học</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Giáo viên rất tận tâm và kiên nhẫn. Tôi đã học hết khóa A1 chỉ trong 1 tháng 
+                        và đỗ ngay lần đầu. Cảm ơn các thầy cô!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">NH</div>
+                        <div>
+                            <h4>Nguyễn Hoàng</h4>
+                            <p>Hạng A1</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Khóa C1 của chúng tôi rất hiệu quả. Giáo viên dạy kỹ, trang bị kiến thức lý thuyết 
+                        và kỹ năng thực hành đầy đủ. Chắc chắn sẽ giới thiệu cho bạn bè!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">TL</div>
+                        <div>
+                            <h4>Trần Linh</h4>
+                            <p>Hạng C1</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Dịch vụ hỗ trợ của chúng tôi rất tuyệt. Mọi câu hỏi của tôi đều được giải đáp 
+                        nhanh chóng. Chất lượng giáo dục tại đây thực sự xứng đáng."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PT</div>
+                        <div>
+                            <h4>Phạm Toàn</h4>
+                            <p>Hạng D2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT FORM SECTION
+         ============================================ -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info" data-aos="fade-right">
+                    <h2>Liên Hệ Với Chúng Tôi</h2>
+                    <p>Hãy điền thông tin dưới đây để nhận tư vấn miễn phí từ đội ngũ chuyên gia của chúng tôi</p>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M25 35 L75 35 L75 70 Q75 85 60 85 L40 85 Q25 85 25 70 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M25 35 L50 55 L75 35" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contact@drivingschool.vn</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M30 25 L30 55 Q30 70 45 75 L55 75 Q70 70 70 55 L70 25" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <rect x="35" y="30" width="30" height="25" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Điện Thoại</h4>
+                            <p>02363615208 / 02363615209</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M50 15 L80 35 L80 85 L20 85 L20 35 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M35 60 Q35 60 50 70 Q65 60 65 60" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Địa Chỉ</h4>
+                            <p>53 Phan Đăng Lưu, Hải Châu, Đà Nẵng</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M50 25 L50 50 L70 70" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Giờ Làm Việc</h4>
+                            <p>8:00 - 21:00 (Thứ 2 - Chủ Nhật)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm" data-aos="fade-left">
+                    <div class="form-group">
+                        <input type="text" placeholder="Họ và tên" required>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="tel" placeholder="Số điện thoại" required>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <select required>
+                            <option value="">-- Chọn khóa học --</option>
+                            <option value="a1">Hạng A1</option>
+                            <option value="c1">Hạng C1</option>
+                            <option value="d2">Hạng D2</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea placeholder="Ghi chú thêm (tùy chọn)" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg">Gửi Thông Tin</button>
+                    <p class="form-note">Chúng tôi sẽ liên hệ lại bạn trong vòng 24 giờ</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Về Chúng Tôi</h4>
+                    <p>Trung tâm dạy bằng lái xe chuyên nghiệp, tập trung vào chất lượng 
+                       giáo dục và sự hài lòng của học viên.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Khóa Học</h4>
+                    <ul>
+                        <li><a href="#courses">Hạng A1</a></li>
+                        <li><a href="#courses">Hạng C1</a></li>
+                        <li><a href="#courses">Hạng D2</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Liên Hệ</h4>
+                    <ul>
+                        <li>Hotline: 02363615208</li>
+                        <li>Email: contact@drivingschool.vn</li>
+                        <li>Địa chỉ: 53 Phan Đăng Lưu, Đà Nẵng</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Mạng Xã Hội</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Trung Tâm Dạy Bằng Lái Xe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    <script src="/js/animations.js"></script>
+    <script src="/js/form-handler.js"></script>
+</body>
+</html>

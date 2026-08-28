@@ -1,0 +1,42 @@
+{
+  "name": "driving-school-landing",
+  "version": "1.0.0",
+  "description": "Modern landing page for driving school in Da Nang",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "build": "node build.js",
+    "lint": "eslint .",
+    "test": "node --test tests/**/*.test.js"
+  },
+  "keywords": [
+    "driving-school",
+    "landing-page",
+    "danang",
+    "education"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.10",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.0",
+    "helmet": "^7.1.0",
+    "mongoose": "^8.0.3",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.10.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
