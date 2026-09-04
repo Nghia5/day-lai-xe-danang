@@ -2,6 +2,7 @@ import compression from 'compression';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
+import session from 'express-session'; // [THÊM MỚI] Import thư viện session
 import fs from 'fs/promises';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -44,6 +45,14 @@ if (NODE_ENV === 'development') {
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
+// [THÊM MỚI] Cấu hình Session
+app.use(session({
+    secret: process.env.SESSION_SECRET || 'day-lai-xe-danang-secret-key-2026', 
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: NODE_ENV === 'production' } // Bật secure nếu chạy trên server HTTPS
+}));
+
 // View engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -52,6 +61,17 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/css', express.static(path.join(__dirname, 'src/assets/styles')));
 app.use('/js', express.static(path.join(__dirname, 'src/js')));
+
+// ============================================
+// MIDDLEWARE BẢO VỆ ROUTE QUẢN TRỊ [THÊM MỚI]
+// ============================================
+const requireLogin = (req, res, next) => {
+    if (req.session.isAdmin) {
+        next(); // Đã đăng nhập, cho phép đi tiếp
+    } else {
+        res.redirect('/login'); // Chưa đăng nhập, đá về trang login
+    }
+};
 
 // ============================================
 // ROUTES
@@ -72,8 +92,8 @@ app.get('/khoa-hoc/:id', (req, res) => {
     const courseData = {
         'a': { 
             title: 'THI BẰNG LÁI XE MÁY HẠNG A', 
-            price: '1.700.000đ',           // Giá mồi nổi bật ở đầu trang
-            totalPrice: '2.195.000đ',      // Tổng chi phí thực tế cuối bảng
+            price: '1.700.000đ',
+            totalPrice: '2.195.000đ',
             duration: '2 - 3 Tuần', 
             desc: 'Học phí đào tạo cốt lõi chỉ 1.700.000đ, các khoản còn lại là lệ phí thu hộ nộp cho cơ quan nhà nước. Tổng chi phí trọn gói (khi chưa có bằng ô tô) là 2.195.000đ.',
             image: '/images/courses/chi-phi-hang-a.jpg',
@@ -95,8 +115,8 @@ app.get('/khoa-hoc/:id', (req, res) => {
         },
         'a1': { 
             title: 'THI BẰNG LÁI XE MÁY HẠNG A1', 
-            price: '500.000đ',            // Giá mồi nổi bật ở đầu trang
-            totalPrice: '995.000đ',       // Tổng chi phí thực tế cuối bảng
+            price: '500.000đ',
+            totalPrice: '995.000đ',
             duration: '1 Tuần', 
             desc: 'Học phí đào tạo cốt lõi chỉ 500.000đ, các khoản còn lại là lệ phí thu hộ nộp cho cơ quan nhà nước. Tổng chi phí trọn gói (khi chưa có bằng ô tô) là 995.000đ.',
             image: '/images/courses/chi-phi-hang-a1.jpg',
@@ -145,8 +165,43 @@ app.get('/khoa-hoc/:id', (req, res) => {
     });
 });
 
+// ============================================
+// AUTH ROUTES [THÊM MỚI]
+// ============================================
+
+// GET: Hiển thị trang đăng nhập
+app.get('/login', (req, res) => {
+    // Nếu đã đăng nhập rồi thì điều hướng thẳng vào admin
+    if (req.session.isAdmin) {
+        return res.redirect('/admin/danh-sach');
+    }
+    res.render('login.ejs', { error: null });
+});
+
+// POST: Xử lý thông tin đăng nhập
+app.post('/login', (req, res) => {
+    const { username, password } = req.body;
+    
+    // TÀI KHOẢN CỨNG
+    if (username === 'admin' && password === '123456') { 
+        req.session.isAdmin = true;
+        res.redirect('/admin/danh-sach');
+    } else {
+        res.render('login.ejs', { error: 'Tên đăng nhập hoặc mật khẩu không đúng!' });
+    }
+});
+
+// GET: Đăng xuất
+app.get('/logout', (req, res) => {
+    req.session.destroy();
+    res.redirect('/login');
+});
+
+// ============================================
 // ROUTE QUẢN TRỊ NỘI BỘ (ĐỌC DATA.JSON)
-app.get('/admin/danh-sach', async (req, res) => {
+// [CẬP NHẬT] Thêm middleware requireLogin vào route này
+// ============================================
+app.get('/admin/danh-sach', requireLogin, async (req, res) => {
     try {
         let listContacts = [];
         try {
